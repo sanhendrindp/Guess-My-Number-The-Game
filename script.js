@@ -34,6 +34,7 @@ document.querySelector('.check').addEventListener('click', function () {
         document.querySelector('.highscore').textContent = highscore;
       }
       playing = false;
+      document.querySelector('.check').classList.add('non-active');
 
       // If guess is wrong
     } else if (guess !== secretNumber) {
@@ -46,6 +47,7 @@ document.querySelector('.check').addEventListener('click', function () {
         displayMessage('👎 You Lose...');
         document.querySelector('body').style.backgroundColor = '#EA5455';
         playing = false;
+        document.querySelector('.check').classList.add('non-active');
       }
     }
   }
@@ -64,5 +66,6 @@ document.querySelector('.retry').addEventListener('click', function () {
   document.querySelector('.number').style.width = '15rem';
   document.querySelector('body').style.backgroundColor = 'rgb(60, 60, 60)';
   document.querySelector('.guess').value = '';
+  document.querySelector('.check').classList.remove('non-active');
   displayMessage('Start Guessing...');
 });
